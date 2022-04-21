@@ -1,2 +1,4 @@
+from Vertex import Vertex
+
 if __name__ == '__main__':
-    print("Welcome")
+    vertex = Vertex(2, 3)
