@@ -1,4 +1,6 @@
 import unittest
+from Polygon import Polygon
+from PolygonType import PolygonType
 from Utils import count_vertices_distance
 from Vertex import Vertex
 
@@ -28,3 +30,32 @@ class VerticesDistanceTests(unittest.TestCase):
         expected_result = 13
 
         self.assertEqual(result, expected_result)
+
+
+class PolygonTypeTests(unittest.TestCase):
+
+    def test_1(self):
+        vertex_1 = Vertex(0, 0)
+        vertex_2 = Vertex(0, 1)
+        vertex_3 = Vertex(1, 1)
+        vertex_4 = Vertex(1, 0)
+        vertices = [vertex_1, vertex_2, vertex_3, vertex_4]
+
+        polygon = Polygon(vertices)
+        result = polygon.type
+        expected = PolygonType.convex
+
+        self.assertEqual(result, expected)
+
+    def test_2(self):
+        vertex_1 = Vertex(1.5, 1.5)
+        vertex_2 = Vertex(0, 2)
+        vertex_3 = Vertex(2, 2)
+        vertex_4 = Vertex(2, 0)
+        vertices = [vertex_1, vertex_2, vertex_3, vertex_4]
+
+        polygon = Polygon(vertices)
+        result = polygon.type
+        expected = PolygonType.concave
+
+        self.assertEqual(result, expected)
