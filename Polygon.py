@@ -4,7 +4,7 @@ from Utils import count_vertices_distance, cross_product
 
 class Polygon:
     def __init__(self, vertices):
-        """ Constructs all the necessary attributes for the polygon object.
+        """Constructs all the necessary attributes for the polygon object.
 
         Parameters
         ----------
