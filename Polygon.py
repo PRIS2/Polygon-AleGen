@@ -4,6 +4,14 @@ from Utils import count_vertices_distance, cross_product
 
 class Polygon:
     def __init__(self, vertices):
+        """
+        Constructs all the necessary attributes for the polygon object.
+
+        Parameters
+        ----------
+            vertices : List[Vertex]
+                vertices of polygon
+        """
         self.vertices = vertices
         self.perimeter = self.__count_perimeter()
         self.type = self.__get_polygon_type()
