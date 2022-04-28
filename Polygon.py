@@ -12,11 +12,11 @@ class Polygon:
         current_perimeter = 0
         vertices_number = len(self.vertices)
         if vertices_number >= 3:
-            for i in range(vertices_number - 1):
+            for i in range(vertices_number):
                 vertex_1 = self.vertices[i]
-                vertex_2 = self.vertices[i + 1]
+                vertex_2 = self.vertices[(i + 1) % vertices_number]
                 current_perimeter += count_vertices_distance(vertex_1, vertex_2)
-        return current_perimeter
+        return round(current_perimeter, 2)
 
     def __get_polygon_type(self):
         edges_number = len(self.vertices)
